@@ -1,34 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Fetcher</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokémon Fetcher</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <img src="logoo.png" alt="Pokemon logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Legendary</a></li>
+        <li><a href="#">Phase</a></li>
+        <li><a href="#">Type</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="pokemonName" placeholder="Search for Pokémon" />
+      <button onclick="fetchData()">Fetch</button>
+    </div>
+  </header>
 
-    <div class="container">
-        <h1>Pokémon Fetcher</h1>
-        <p>Enter a Pokémon name to fetch its details.</p>
+  <section class="intro-section">
+    <div class="intro-text">
+      <h1>Welcome to Pokémon Fetcher!</h1>
+      <p>
+        This fun and easy-to-use web app allows you to fetch detailed information
+        about your favorite Pokémon characters. Just type a name into the search bar,
+        and voilà! You’ll see its image, ID, and types.
+      </p>
+      <p>Try these Pokémon:</p>
+      <ul class="starter-list">
+        <li>Pikachu</li>
+        <li>Charmander</li>
+        <li>Bulbasaur</li>
+        <li>Squirtle</li>
+        <li>Eevee</li>
+        <li>Mewtwo</li>
+        <li>Gengar</li>
+      </ul>
+    </div>
+    <div class="intro-image">
+      <img src="screen.png" alt="Page view mockup" />
+    </div>
+  </section>
 
-        <div class="input-container">
-            <input type="text" id="pokemonName" placeholder="Enter Pokémon name">
-            <button onclick="fetchData()">Fetch</button>
-        </div>
+  <main>
+    <div class="result">
+        <h2 class="section-title">TODAY’S POKÉMON</h2>
 
-        <div id="pokemonCard" class="card hidden">
-            <img src="" alt="Pokemon sprite" id="pokemonSprite">
-            <h2 id="pokemonTitle"></h2>
-            <p id="pokemonType"></p>
-        </div>
-
-        <div id="loading" class="hidden">
-            <div class="loader"></div>
-            <p>Loading...</p>
-        </div>
+    <div id="loading" class="hidden">
+      <div class="loader"></div>
+      <p>Loading...</p>
     </div>
 
-    <script src="index.js"></script>
+    <div id="pokemonCard" class="poke-card hidden">
+      <img src="" alt="Pokemon sprite" id="pokemonSprite" />
+      <div class="poke-info">
+        <p id="pokemonId" class="poke-id"></p>
+        <h3 id="pokemonTitle" class="poke-name"></h3>
+        <div id="typeContainer" class="type-badges"></div>
+      </div>
+    </div>
+    
+    </div>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
